@@ -36,7 +36,7 @@ export default function Hero() {
           <div className={`hero-meta ${cls(4)}`} style={{ marginTop: 48 }}>
             <div>
               <div className="label">Тривалість</div>
-              <div className="value">11 днів</div>
+              <div className="value">10 днів</div>
             </div>
             <div>
               <div className="label">Вік</div>

@@ -72,20 +72,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-.brand-L {
-  width: 36px; height: 36px;
-  background: var(--purple);
-  border-radius: var(--r);
-  display: grid; place-items: center;
-  color: white;
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1;
-  transition: transform .4s var(--t);
-}
-.brand:hover .brand-L { transform: rotate(-6deg) scale(1.05); }
-.brand-name { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: -0.01em; }
+.brand-name { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: -0.01em; color: var(--purple); }
 .brand-sub { color: var(--ink-muted); font-size: 11px; font-family: 'JetBrains Mono', monospace; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
@@ -180,16 +167,13 @@ nav {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-art { width: 200px; height: 240px; justify-self: start; opacity: .9; }
 }
-.big-L {
+
+/* Піксельний блок замість емблеми */
+.big-block {
   width: 100%; height: 100%;
   background: var(--purple);
-  color: white;
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 700;
-  font-size: 280px;
-  line-height: 0.78;
-  display: grid; place-items: center;
   border-radius: 8px;
+  display: grid; place-items: center;
   box-shadow:
     14px 14px 0 var(--ink),
     0 60px 120px -30px rgba(109, 74, 255, 0.5);
@@ -200,7 +184,7 @@ nav {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-4px, -8px); }
 }
-.big-L::after {
+.big-block::after {
   content: ''; position: absolute;
   top: -16px; right: -16px;
   width: 80px; height: 80px;
@@ -208,6 +192,24 @@ nav {
   border-radius: var(--r);
   z-index: -1;
   transform: rotate(8deg);
+}
+.px-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 62%;
+}
+.px-grid span {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+.px-grid span.on {
+  background: #fff;
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 920px) {
+  .px-grid { gap: 6px; }
 }
 
 .pixel-row { display: flex; gap: 6px; margin-top: 24px; }
@@ -526,16 +528,25 @@ nav {
   overflow: hidden;
 }
 @media (max-width: 720px) { .skills-wrap { padding: 48px 28px; } }
+/* Декоративний піксель-кластер замість великої літери */
 .skills-wrap::before {
-  content: 'L'; position: absolute;
-  right: -80px; bottom: -120px;
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 700;
-  font-size: 480px;
-  color: var(--purple-deep);
-  line-height: 1;
+  content: '';
+  position: absolute;
+  right: 90px; bottom: 110px;
+  width: 90px; height: 90px;
+  border-radius: 12px;
+  background: var(--purple-deep);
   opacity: 0.3;
   pointer-events: none;
+  box-shadow:
+    -120px 0 var(--purple-deep),
+    120px 0 var(--purple-deep),
+    0 -120px var(--purple-deep),
+    0 120px var(--purple-deep),
+    -120px -120px var(--purple-deep),
+    120px -120px var(--purple-deep),
+    -120px 120px var(--purple-deep),
+    120px 120px var(--purple-deep);
 }
 .skills-wrap h2 { color: white; font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 16px; position: relative; }
 .skills-wrap > p { color: rgba(255, 255, 255, 0.6); max-width: 560px; margin-bottom: 48px; position: relative; }

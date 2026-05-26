@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+// Піксельний "блок" замість літери — діамант 5×5 (індекси клітинок, що світяться)
+const BLOCK = new Set([2, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22])
+
 export default function Hero() {
   // Staggered entrance — 5 elements, 120ms apart
   const [shownCount, setShownCount] = useState(0)
@@ -53,7 +56,13 @@ export default function Hero() {
           </div>
         </div>
         <div className={`hero-art ${cls(0)}`}>
-          <div className="big-L">L</div>
+          <div className="big-block">
+            <div className="px-grid">
+              {Array.from({ length: 25 }).map((_, i) => (
+                <span key={i} className={BLOCK.has(i) ? 'on' : ''} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </header>

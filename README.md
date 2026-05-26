@@ -1,6 +1,6 @@
-# Logika — Minecraft: від Intern до Senior
+#  Minecraft: від Intern до Senior
 
-Лендінг літнього гуртка школи програмування Logika (філія Коломия).
+Лендінг літнього гуртка.
 React + Vite, без зайвих залежностей.
 
 

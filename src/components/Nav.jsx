@@ -3,10 +3,9 @@ export default function Nav() {
     <nav>
       <div className="nav-inner">
         <a href="#top" className="brand">
-          <div className="brand-L">L</div>
           <div>
-            <div className="brand-name">Logika</div>
-            <div className="brand-sub">школа програмування</div>
+            <div className="brand-name"> Minecraft </div>
+            <div className="brand-sub"> від Intern до Senior</div>
           </div>
         </a>
         <div className="nav-links">

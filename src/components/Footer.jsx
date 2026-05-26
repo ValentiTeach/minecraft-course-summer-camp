@@ -4,8 +4,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot">
           <div className="left">
-            <div className="brand-L" style={{ width: 28, height: 28, fontSize: 16 }}>L</div>
-            <span className="mono">© 2026 LOGIKA — KOLOMYIA BRANCH</span>
+            <span className="mono">© 2026 · KOLOMYIA</span>
           </div>
           <div className="right">
             <a href="#concept">концепція</a>
